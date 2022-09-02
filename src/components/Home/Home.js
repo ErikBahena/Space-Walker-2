@@ -90,6 +90,8 @@ const ResponsiveContainer = styled.div`
 
   // Mobile Responsiveness
   @media (max-width: 700px) {
+    padding: 0 0;
+
     .div1 {
       h1 {
         font-size: 80px;

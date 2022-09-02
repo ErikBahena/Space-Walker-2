@@ -93,7 +93,7 @@ export default function App() {
 
           <Route path='/crew' element={<Crew />} />
 
-          <Route path='*' element={<Navigate to='/home' replace />} />
+          <Route path='/' element={<Navigate to='/home' replace />} />
         </Routes>
       </div>
     </StyledApp>

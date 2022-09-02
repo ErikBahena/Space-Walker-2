@@ -195,6 +195,7 @@ export default function NavBar() {
         <Link
           to='/home'
           className={pathname === '/home' ? 'active-nav-link' : ''}
+          onClick={mobileNavActive ?? toggleNav}
         >
           <p className='navText'>
             <b className='navBold'>00</b> Home
@@ -204,6 +205,7 @@ export default function NavBar() {
         <Link
           to='/destination'
           className={pathname === '/destination' ? 'active-nav-link' : null}
+          onClick={mobileNavActive ?? toggleNav}
         >
           <p className='navText'>
             <b className='navBold'>01</b> Destination
@@ -213,6 +215,7 @@ export default function NavBar() {
         <Link
           to='/crew'
           className={pathname === '/crew' ? 'active-nav-link' : null}
+          onClick={mobileNavActive ?? toggleNav}
         >
           <p className='navText'>
             <b className='navBold'>02</b> Crew
@@ -222,6 +225,7 @@ export default function NavBar() {
         <Link
           to='/technology'
           className={pathname === '/technology' ? 'active-nav-link' : null}
+          onClick={mobileNavActive ?? toggleNav}
         >
           <p className='navText'>
             <b className='navBold'>03</b> Technology
