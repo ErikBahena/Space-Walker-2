@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import NavLogo from '../assets/shared/logo.svg';
 import HamburgerIcon from '../assets/shared/icon-hamburger.svg';
