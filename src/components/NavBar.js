@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 import NavLogo from '../assets/shared/logo.svg';
 import HamburgerIcon from '../assets/shared/icon-hamburger.svg';
+import CloseIcon from '../assets/shared/icon-close.svg';
 
 const StyledNav = styled.nav`
   display: flex;
@@ -121,32 +122,8 @@ const StyledNav = styled.nav`
       right: 0;
 
       .close-menu-btn {
-        display: flex;
-        align-self: flex-start;
-        margin-left: 2em;
-
-        transform: scale(2);
-        margin-left: 10px;
-
-        .chevron::before {
-          border-style: solid;
-          border-color: white;
-          border-width: 0.15em 0.15em 0 0;
-          content: '';
-          display: inline-block;
-          height: 0.45em;
-          left: 0.15em;
-          position: relative;
-          top: 0.15em;
-          transform: rotate(-45deg);
-          vertical-align: top;
-          width: 0.45em;
-        }
-
-        .chevron.right:before {
-          left: 0;
-          transform: rotate(45deg);
-        }
+        align-self: flex-end;
+        padding-right: 15%;
       }
 
       a {
@@ -187,9 +164,12 @@ export default function NavBar() {
         }`}
       >
         {mobileNavActive && (
-          <div className='close-menu-btn' onClick={toggleNav}>
-            <span className='chevron right'></span>
-          </div>
+          <img
+            src={CloseIcon}
+            alt='close menu'
+            className='close-menu-btn'
+            onClick={toggleNav}
+          />
         )}
 
         <Link
