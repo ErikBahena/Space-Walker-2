@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 
 // Style Imports
 import styled from 'styled-components';
@@ -79,17 +79,19 @@ const StyledApp = styled.div`
 `;
 
 export default function App() {
+  const { pathname } = useLocation();
+
   return (
     <StyledApp>
-      <div className={`wrapper ${'home' + 'Bg'}`}>
+      <div className={`wrapper ${pathname.slice(1) + 'Bg'}`}>
         <NavBar />
 
         <Routes>
-          <Route path='/crew' component={<Crew />} />
+          <Route path='/home' element={<Home />} />
 
-          <Route path='/destination' component={<Destination />} />
+          <Route path='/destination' element={<Destination />} />
 
-          <Route path='/home' component={<Home />} />
+          <Route path='/crew' element={<Crew />} />
         </Routes>
       </div>
     </StyledApp>

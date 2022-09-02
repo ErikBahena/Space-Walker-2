@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import NavLogo from '../assets/shared/logo.svg';
 import HamburgerIcon from '../assets/shared/icon-hamburger.svg';
@@ -164,11 +164,9 @@ const StyledNav = styled.nav`
 
 export default function NavBar() {
   const [mobileNavActive, setMobileNavActive] = React.useState(false);
-  const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const toggleNav = () => setMobileNavActive(!mobileNavActive);
-
-  const location = window.location;
 
   return (
     <StyledNav>
@@ -196,7 +194,7 @@ export default function NavBar() {
 
         <Link
           to='/home'
-          className={location.pathname === '/home' ? 'active-nav-link' : ''}
+          className={pathname === '/home' ? 'active-nav-link' : ''}
         >
           <p className='navText'>
             <b className='navBold'>00</b> Home
@@ -205,9 +203,7 @@ export default function NavBar() {
 
         <Link
           to='/destination'
-          className={
-            location.pathname === '/destination' ? 'active-nav-link' : null
-          }
+          className={pathname === '/destination' ? 'active-nav-link' : null}
         >
           <p className='navText'>
             <b className='navBold'>01</b> Destination
@@ -216,7 +212,7 @@ export default function NavBar() {
 
         <Link
           to='/crew'
-          className={location.pathname === '/crew' ? 'active-nav-link' : null}
+          className={pathname === '/crew' ? 'active-nav-link' : null}
         >
           <p className='navText'>
             <b className='navBold'>02</b> Crew
@@ -225,9 +221,7 @@ export default function NavBar() {
 
         <Link
           to='/technology'
-          className={
-            location.pathname === '/technology' ? 'active-nav-link' : null
-          }
+          className={pathname === '/technology' ? 'active-nav-link' : null}
         >
           <p className='navText'>
             <b className='navBold'>03</b> Technology
