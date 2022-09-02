@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link, useLocation } from 'react-router-dom';
 
-import NavLogo from '../assets/shared/logo.svg';
-import HamburgerIcon from '../assets/shared/icon-hamburger.svg';
-import CloseIcon from '../assets/shared/icon-close.svg';
+import NavLogo from '../../assets/shared/logo.svg';
+import HamburgerIcon from '../../assets/shared/icon-hamburger.svg';
+import CloseIcon from '../../assets/shared/icon-close.svg';
 
 const StyledNav = styled.nav`
   display: flex;
@@ -175,9 +175,8 @@ export default function NavBar() {
         <Link
           to='/home'
           className={pathname === '/home' ? 'active-nav-link' : ''}
-          onClick={mobileNavActive ?? toggleNav}
         >
-          <p className='navText'>
+          <p className='navText' onClick={mobileNavActive ? toggleNav : null}>
             <b className='navBold'>00</b> Home
           </p>
         </Link>
@@ -185,9 +184,8 @@ export default function NavBar() {
         <Link
           to='/destination'
           className={pathname === '/destination' ? 'active-nav-link' : null}
-          onClick={mobileNavActive ?? toggleNav}
         >
-          <p className='navText'>
+          <p className='navText' onClick={mobileNavActive ? toggleNav : null}>
             <b className='navBold'>01</b> Destination
           </p>
         </Link>
@@ -195,9 +193,8 @@ export default function NavBar() {
         <Link
           to='/crew'
           className={pathname === '/crew' ? 'active-nav-link' : null}
-          onClick={mobileNavActive ?? toggleNav}
         >
-          <p className='navText'>
+          <p className='navText' onClick={mobileNavActive ? toggleNav : null}>
             <b className='navBold'>02</b> Crew
           </p>
         </Link>
@@ -205,9 +202,8 @@ export default function NavBar() {
         <Link
           to='/technology'
           className={pathname === '/technology' ? 'active-nav-link' : null}
-          onClick={mobileNavActive ?? toggleNav}
         >
-          <p className='navText'>
+          <p className='navText' onClick={mobileNavActive ? toggleNav : null}>
             <b className='navBold'>03</b> Technology
           </p>
         </Link>

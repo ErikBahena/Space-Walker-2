@@ -5,7 +5,7 @@ import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 // Components
-import NavBar from './components/NavBar.js';
+import NavBar from './components/Layout/NavBar.js';
 import Home from './components/Home/Home.js';
 import Destination from './components/Destination/Destination.js';
 import Crew from './components/Crew/Crew.js';
@@ -93,7 +93,7 @@ export default function App() {
 
           <Route path='/crew' element={<Crew />} />
 
-          <Route path='/' element={<Navigate to='/home' replace />} />
+          <Route path='*' element={<Navigate to='/home' replace />} />
         </Routes>
       </div>
     </StyledApp>
