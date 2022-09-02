@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 // MockData
@@ -9,13 +9,15 @@ const StyledPlanetCard = styled.div`
   transition: all 0.5s linear;
 
   h2 {
-    margin-top: 37px;
-    margin-bottom: 14px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 90px;
   }
 
   p:nth-of-type(1) {
     max-width: 444px;
     color: var(--light-purple);
+    margin-top: 0;
   }
 
   hr {
@@ -26,27 +28,51 @@ const StyledPlanetCard = styled.div`
 
   .vectors-container {
     display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
 
-    div:nth-of-type(1) {
-      margin-right: 79px;
+    p.p-description {
+      margin: 0;
+    }
+
+    p.subh1 {
+      margin: 0;
+    }
+
+    p.subh2 {
+      margin-top: 0.7rem;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 1013px) {
+      justify-content: center;
+    }
+
+    @media (max-width: 700px) {
+      flex-wrap: wrap;
+      text-align: center;
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .p-description {
+      margin-top: 0;
+    }
+  }
+
+  @media (max-width: 420px) {
+    h2 {
+      font-size: 70px;
     }
   }
 `;
 
 export default function PlanetCard({ planetName }) {
-  const [data, setData] = useState({
-    title: planetsData[planetName].title,
-  });
-
-  useEffect(() => {
-    setData({
-      title: planetsData[planetName].title,
-    });
-  }, [planetName]);
-
   return (
     <StyledPlanetCard>
-      <h2>{data.title}</h2>
+      <h2>{planetsData[planetName].title}</h2>
       <p className='p-description'>{planetsData[planetName].description}</p>
 
       <hr></hr>

@@ -11,7 +11,7 @@ const ResponsiveContainer = styled.div`
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 
-  padding: 11em 0;
+  margin-top: 8%;
 
   .div1 {
     grid-area: 1 / 2 / 2 / 6;

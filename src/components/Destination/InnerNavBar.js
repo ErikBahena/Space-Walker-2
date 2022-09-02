@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const StyledInnerNavBar = styled.nav`
   display: flex;
@@ -45,33 +45,36 @@ const StyledInnerNavBar = styled.nav`
 
 function InnerNavBar({ handlePlanetChange }) {
   const handleClick = (e) => {
-    const clickedOnPlanetLink = e.target.closest("p.navText");
-    if (!clickedOnPlanetLink) return;
+    const clickedOnPlanetLink = e.target;
 
     // CallBack to change state
-    handlePlanetChange(clickedOnPlanetLink.innerText.toLowerCase());
+    handlePlanetChange(e.target.dataset.name);
 
     // Removing active style from anything that already has it
     e.target.parentElement
-      .querySelectorAll("p.active-nav-link")
-      .forEach((el) => el.classList.remove("active-nav-link"));
+      .querySelectorAll('p.active-nav-link')
+      .forEach((el) => el.classList.remove('active-nav-link'));
 
     // Adding the active className to the one we click on
-    clickedOnPlanetLink.classList.add("active-nav-link");
+    clickedOnPlanetLink.classList.add('active-nav-link');
   };
 
   return (
     <StyledInnerNavBar>
-      <p onClick={handleClick} className="navText active-nav-link">
+      <p
+        onClick={handleClick}
+        data-name='moon'
+        className='navText active-nav-link'
+      >
         Moon
       </p>
-      <p onClick={handleClick} className="navText">
+      <p onClick={handleClick} data-name='mars' className='navText'>
         Mars
       </p>
-      <p onClick={handleClick} className="navText">
+      <p onClick={handleClick} data-name='europa' className='navText'>
         Europa
       </p>
-      <p onClick={handleClick} className="navText">
+      <p onClick={handleClick} data-name='titan' className='navText'>
         Titan
       </p>
     </StyledInnerNavBar>
