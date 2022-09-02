@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 
 // Style Imports
 import styled from 'styled-components';
@@ -92,6 +92,8 @@ export default function App() {
           <Route path='/destination' element={<Destination />} />
 
           <Route path='/crew' element={<Crew />} />
+
+          <Route path='*' element={<Navigate to='/home' replace />} />
         </Routes>
       </div>
     </StyledApp>
