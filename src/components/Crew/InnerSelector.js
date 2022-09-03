@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const StyledInnerSelector = styled.div`
   display: flex;
   width: 132px;
   justify-content: space-between;
-  margin-bottom: 94px;
+  margin: 5% 0;
 
   div {
     height: 15px;
@@ -35,23 +35,23 @@ export default function InnerSelector({ currentCrewMember, handleCrewChange }) {
     <StyledInnerSelector>
       <div
         onClick={handleClick}
-        className={currentCrewMember === "douglas" ? "active" : ""}
-        data-name="douglas"
+        className={currentCrewMember === 'douglas' ? 'active' : ''}
+        data-name='douglas'
       ></div>
       <div
         onClick={handleClick}
-        className={currentCrewMember === "mark" ? "active" : ""}
-        data-name="mark"
+        className={currentCrewMember === 'mark' ? 'active' : ''}
+        data-name='mark'
       ></div>
       <div
         onClick={handleClick}
-        className={currentCrewMember === "victor" ? "active" : ""}
-        data-name="victor"
+        className={currentCrewMember === 'victor' ? 'active' : ''}
+        data-name='victor'
       ></div>
       <div
         onClick={handleClick}
-        className={currentCrewMember === "anousheh" ? "active" : ""}
-        data-name="anousheh"
+        className={currentCrewMember === 'anousheh' ? 'active' : ''}
+        data-name='anousheh'
       ></div>
     </StyledInnerSelector>
   );
