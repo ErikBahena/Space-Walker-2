@@ -140,6 +140,7 @@ export default function Crew() {
         className='img'
         src={currentCrewMember.img}
         alt={'crew member ' + currentCrewMember.name}
+        draggable='false'
       />
     </StyledCrewResponsive>
   );
